@@ -1,0 +1,71 @@
+/* Style pour une meilleure expérience utilisateur */
+body {
+    transition: background-color 0.3s ease; /* Transition douce pour le corps */
+}
+
+/* Animations pour les lignes du tableau et boutons */
+#stockTableBody tr, .btn {
+    transition: all 0.2s ease-in-out;
+}
+
+#stockTableBody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Léger surlignage au survol */
+    transform: scale(1.01); /* Léger zoom */
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Petit effet de soulèvement */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Assurer que les images dans le tableau ne dépassent pas */
+.stock-item-img {
+    max-width: 60px;
+    height: auto;
+    max-height: 60px;
+    border-radius: 5px;
+    object-fit: cover; /* S'assure que l'image couvre l'espace sans distorsion */
+    vertical-align: middle;
+}
+
+.img-thumbnail {
+     transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Pour la réactivité du tableau */
+@media (max-width: 768px) {
+    /* Optionnel: Masquer certaines colonnes moins critiques sur petit écran */
+    /* .table th:nth-child(1), .table td:nth-child(1) { display: none; } Photo */
+
+     /* Ajuster la taille de la police pour les petits écrans */
+    body {
+        font-size: 0.9rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Style pour l'état désactivé des boutons d'exportation */
+.btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+
+/* Style pour la section fin de journée */
+#fin-journee .card {
+    border-left: 5px solid #198754; /* Bordure verte pour succès/finances */
+}
+
+/* Petite animation pour le total des ventes quand il change */
+#totalSales {
+    display: inline-block; /* Nécessaire pour transform */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#totalSales.updated { /* Classe ajoutée temporairement via JS */
+    transform: scale(1.1);
+    color: #dc3545; /* Mettre en évidence brièvement */
+}
