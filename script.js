@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- DONNÉES (Simulation - Utiliser localStorage pour la persistance) ---
     let stock = JSON.parse(localStorage.getItem('stockData')) || [
         // Données d'exemple initiales si localStorage est vide
-        { id: Date.now() + 1, name: "Savon", quantity: 50, price: 500, image: "https://via.placeholder.com/60/FFA500/FFFFFF?text=Savon" },
-        { id: Date.now() + 2, name: "Sucre", quantity: 100, price: 2500, image: "https://via.placeholder.com/60/87CEEB/FFFFFF?text=Sucre" },
-        { id: Date.now() + 3, name: "Huile", quantity: 30, price: 5000, image: "https://via.placeholder.com/60/FFFF00/000000?text=Huile" }
+        { id: Date.now() + 1, name: "PlayStation 5 Pro", quantity: 20, price: 799.99, image: "https://gmedia.playstation.com/is/image/SIEPDC/ps5-pro-dualsense-image-block-01-en-16aug24" },
+        { id: Date.now() + 2, name: "Xbox Series X", quantity: 15, price: 499.99, image: "https://static.actu.fr/uploads/2020/02/xbox-series-x-fond-blanc-1.jpg" },
+        { id: Date.now() + 3, name: "Nintendo Switch 2", quantity: 30, price: 499.99, image: "https://static-images.lpnt.fr/cd-cw809/images/2025/01/16/27224744lpw-27224953-mega-une-jpg_10784927.jpg" }
     ];
 
     let salesToday = JSON.parse(localStorage.getItem('salesTodayData')) || [];
