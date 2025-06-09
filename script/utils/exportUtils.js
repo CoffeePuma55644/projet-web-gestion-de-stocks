@@ -1,4 +1,4 @@
-import { salesToday } from '../state.js';
+import { salesToday } from '../../state.js';
 
 export const exportToPDF = () => {
     if (salesToday.length === 0) {

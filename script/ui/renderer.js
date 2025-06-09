@@ -1,5 +1,5 @@
-import * as DOM from '../domElements.js';
-import { stock, salesToday } from '../state.js'; // Importer l'état actuel pour lecture
+import * as DOM from '../../domElements';
+import { stock, salesToday } from '../../state.js'; // Importer l'état actuel pour lecture
 
 // Afficher / Mettre à jour le tableau des stocks
 export const renderStockTable = (itemsToRender = stock) => {

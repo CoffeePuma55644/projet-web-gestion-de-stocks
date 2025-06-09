@@ -1,5 +1,5 @@
-import * as DOM from '../domElements.js';
-import { stock, updateStock, saveData } from '../state.js';
+import * as DOM from '../../domElements.js';
+import { stock, updateStock, saveData } from '../../state.js';
 import { renderStockTable } from '../ui/renderer.js';
 import { addEditModal } from '../ui/modals.js';
 

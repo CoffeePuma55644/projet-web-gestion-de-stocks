@@ -1,15 +1,15 @@
 import * as DOM from './domElements.js';
 import { setItemToSellId, setItemToDeleteId } from './state.js';
 
-import { openAddModal, openEditModal, openSaleConfirmationModal, openDeleteConfirmationModal } from './ui/modals.js';
-import { updateImagePreview } from './ui/imagePreview.js';
+import { openAddModal, openEditModal, openSaleConfirmationModal, openDeleteConfirmationModal } from './script/ui/modals.js';
+import { updateImagePreview } from './script/ui/imagePreview.js';
 
-import { processItemForm } from './actions/handleItemForm.js';
-import { confirmItemDeletion } from './actions/deleteItem.js';
-import { confirmItemSale } from './actions/sellItem.js';
-import { filterStockOnChange } from './actions/searchItem.js';
+import { processItemForm } from './script/actions/handleItemForm.js';
+import { confirmItemDeletion } from './script/actions/deleteItem.js';
+import { confirmItemSale } from './script/actions/sellItem.js';
+import { filterStockOnChange } from './script/actions/searchItem.js';
 
-import { exportToPDF, exportToExcel } from './utils/exportUtils.js';
+import { exportToPDF, exportToExcel } from './script/utils/exportUtils';
 
 export function initializeEventListeners() {
     // Formulaire d'ajout/modification

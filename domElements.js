@@ -32,4 +32,4 @@ export const exportExcelButton = document.querySelector('button[onclick="exportT
 export const addItemButton = document.getElementById('addItemBtn'); // Assurez-vous que ce bouton existe avec cet ID
 
 // Initialiser l'année en cours
-document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('currentYear').textContent = new Date().getFullYear().toString();

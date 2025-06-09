@@ -1,5 +1,5 @@
-import * as DOM from '../domElements.js';
-import { stock } from '../state.js';
+import * as DOM from '../../domElements.js';
+import { stock } from '../../state.js';
 import { renderStockTable } from '../ui/renderer.js';
 
 export const filterStockOnChange = () => {

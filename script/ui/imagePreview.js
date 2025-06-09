@@ -1,4 +1,4 @@
-import * as DOM from '../domElements.js';
+import * as DOM from '../../domElements.js';
 
 export const updateImagePreview = () => {
     const url = DOM.itemImageInput.value.trim();

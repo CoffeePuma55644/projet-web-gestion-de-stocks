@@ -1,5 +1,5 @@
-import * as DOM from '../domElements.js';
-import { stock } from '../state.js'; // Uniquement pour lire les données de l'item
+import * as DOM from '../../domElements.js';
+import { stock } from '../../state.js'; // Uniquement pour lire les données de l'item
 
 // Initialiser les instances de Modales Bootstrap
 export const addEditModal = new bootstrap.Modal(DOM.addEditModalEl);

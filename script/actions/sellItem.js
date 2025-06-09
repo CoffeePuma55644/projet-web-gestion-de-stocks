@@ -1,4 +1,4 @@
-import { stock, updateStock, addSale, saveData, getItemToSellId, setItemToSellId } from '../state.js';
+import { stock, updateStock, addSale, saveData, getItemToSellId, setItemToSellId } from '../../state.js';
 import { renderStockTable, renderSalesSummary } from '../ui/renderer.js';
 import { confirmSaleModal } from '../ui/modals.js';
 

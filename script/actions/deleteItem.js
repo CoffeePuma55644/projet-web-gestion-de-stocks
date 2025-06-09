@@ -1,4 +1,4 @@
-import { stock, updateStock, saveData, getItemToDeleteId, setItemToDeleteId } from '../state.js';
+import { stock, updateStock, saveData, getItemToDeleteId, setItemToDeleteId } from '../../state.js';
 import { renderStockTable, renderSalesSummary } from '../ui/renderer.js';
 import { confirmDeleteModal } from '../ui/modals.js';
 
