@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemQuantityInput = document.getElementById('itemQuantity');
     const itemPriceInput = document.getElementById('itemPrice');
     const itemImageInput = document.getElementById('itemImage');
-    const imagePreview = document.getElementById('imagePreview');
+    const imagePreview = document.getElementById('imagePreview');    
     const noResultsMsg = document.getElementById('noResults');
     
     
