@@ -13,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemImageInput = document.getElementById('itemImage');
     const imagePreview = document.getElementById('imagePreview');
     const noResultsMsg = document.getElementById('noResults');
-
+    
+    
+    // --- VARIABLES POUR LES ACTIONS DE L'APP ---
     const confirmSaleModalEl = document.getElementById('confirmSaleModal');
     const confirmSaleModal = new bootstrap.Modal(confirmSaleModalEl);
     const saleItemNameEl = document.getElementById('saleItemName');
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const deleteItemNameEl = document.getElementById('deleteItemName');
     const confirmDeleteButton = document.getElementById('confirmDeleteButton');
 
+    // --- FONCTIONS DE CALCUL ET D'EXPORT (non implémentée) ---
     const totalSalesEl = document.getElementById('totalSales');
     const salesListUl = document.getElementById('salesList');
     const exportPdfButton = document.querySelector('button[onclick="exportToPDF()"]');
