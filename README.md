@@ -1,4 +1,4 @@
-# GSK – Gestion de Stocks Web
+# GSK – Gestion de Stocks sur le Web
 
 Bienvenue sur **GSK (Gestion de Stocks Web)**, une application web moderne et intuitive pour la gestion des stocks et le suivi des ventes, développée dans le cadre de mon projet de fin de cycle en L1 LMD FASI à l'UPC.
 
@@ -39,7 +39,7 @@ Consultez en temps réel le total des ventes de la journée, le détail de chaqu
 - **Recherche dynamique** par nom d’article
 - **Gestion des ventes** (confirmation, suivi, calcul automatique du total)
 - **Récapitulatif des ventes du jour**
-- **Exportation PDF/Excel** *(bientôt disponible)*
+- **Exportation PDF/Excel** _(bientôt disponible)_
 - **Design responsive** (adapté mobile/tablette/desktop)
 - **Thème sombre professionnel**
 
@@ -50,3 +50,4 @@ Consultez en temps réel le total des ventes de la journée, le détail de chaqu
 1. **Clonez le dépôt :**
    ```bash
    git clone https://github.com/CoffeePuma55644/projet-web-gestion-de-stocks.git
+   ```
