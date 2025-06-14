@@ -127,19 +127,7 @@
             &copy; <span id="currentYear"></span> GSK - Par CoffeePuma - <a href="#">Me contacter</a>
         </div>
     </footer>
-
-    <script>
-        // Afficher l'année courante dans le footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear().toString();
-
-        // Gestion du formulaire de contact
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Merci pour votre message ! Nous vous contacterons bientôt.');
-            this.reset();
-        });
-    </script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../script/actions/contact_script.js"></script>
 </body>
 </html>
