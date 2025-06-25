@@ -1,11 +1,22 @@
-import { renderStockTable, renderSalesSummary } from './script/ui/renderer';
-import { initializeEventListeners } from './eventListeners';
+import { initializeEventListeners } from "./eventListeners.js";
+import { setupFormEventListener } from "./script/actions/handleItemForm.js";
+import { setupSellItemListener } from "./script/actions/sellItem.js";
+import { setupDeleteItemListener } from "./script/actions/deleteItem.js";
+import { setupSearchListener } from "./script/actions/searchItem.js";
+import { renderStockTable, renderSalesSummary } from "./script/ui/renderer.js";
+import "./script/utils/exportUtils.js";
 
-console.log("Le fichier main.js est chargé !")
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-// S'assurer que le DOM est chargé avant d'exécuter le code
-document.addEventListener('DOMContentLoaded', () => {
-    initializeEventListeners(); // Configurer tous les écouteurs d'événements
-    renderStockTable(); // Afficher le tableau initial des stocks
-    renderSalesSummary(); // Afficher le récapitulatif initial des ventes
+  // Initial render
+  renderStockTable();
+  renderSalesSummary();
+
+  // Setup event listeners
+  initializeEventListeners();
+  setupFormEventListener();
+  setupSellItemListener();
+  setupDeleteItemListener();
+  setupSearchListener();
 });

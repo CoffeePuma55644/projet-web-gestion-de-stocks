@@ -1,16 +1,22 @@
-import { stock, updateStock, saveData, getItemToDeleteId, setItemToDeleteId } from '../../state.js';
-import { renderStockTable, renderSalesSummary } from '../ui/renderer.js';
-import { confirmDeleteModal } from '../ui/modals.js';
+import { deleteItem as deleteItemFromState, saveData } from "../state.js";
+import { renderStockTable, renderSalesSummary } from "../ui/renderer.js";
+import {
+  hideConfirmDeleteModal,
+  resetItemToDeleteId,
+  getItemToDeleteId,
+} from "../ui/modals.js";
+import { confirmDeleteButton } from "../domElements.js";
 
-export const confirmItemDeletion = () => {
-    const itemId = getItemToDeleteId();
-    if (itemId !== null) {
-        const newStockData = stock.filter(item => item.id !== itemId);
-        updateStock(newStockData);
-        saveData();
-        renderStockTable();
-        renderSalesSummary(); // Au cas où, bien que non directement impacté.
-        confirmDeleteModal.hide();
-        setItemToDeleteId(null); // Réinitialiser l'ID
+export function setupDeleteItemListener() {
+  confirmDeleteButton.addEventListener("click", () => {
+    const itemToDeleteId = getItemToDeleteId();
+    if (itemToDeleteId !== null) {
+      deleteItemFromState(itemToDeleteId);
+      saveData();
+      renderStockTable(); // Mettre à jour le tableau
+      renderSalesSummary(); // Recalculer au cas où (même si ça ne change rien ici)
+      hideConfirmDeleteModal();
+      resetItemToDeleteId();
     }
-};
+  });
+}

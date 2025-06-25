@@ -1,42 +1,52 @@
-import * as DOM from '../../domElements.js';
-import { stock, updateStock, saveData } from '../../state.js';
-import { renderStockTable } from '../ui/renderer.js';
-import { addEditModal } from '../ui/modals.js';
+import { addItem, updateItem, saveData } from "../state.js";
+import { renderStockTable } from "../ui/renderer.js";
+import { hideAddEditModal } from "../ui/modals.js";
+import {
+  stockForm,
+  itemIdInput,
+  itemNameInput,
+  itemQuantityInput,
+  itemPriceInput,
+  itemImageInput,
+  imagePreview,
+} from "../domElements.js";
 
-export const processItemForm = (event) => {
-    event.preventDefault();
+export function setupFormEventListener() {
+  stockForm.addEventListener("submit", (e) => {
+    e.preventDefault(); // Empêcher le rechargement de la page
 
-    const id = parseInt(DOM.itemIdInput.value);
-    const name = DOM.itemNameInput.value.trim();
-    const quantity = parseInt(DOM.itemQuantityInput.value);
-    const price = parseFloat(DOM.itemPriceInput.value);
-    const image = DOM.itemImageInput.value.trim();
+    const id = parseInt(itemIdInput.value);
+    const name = itemNameInput.value.trim();
+    const quantity = parseInt(itemQuantityInput.value);
+    const price = parseFloat(itemPriceInput.value);
+    const image = itemImageInput.value.trim();
 
     if (!name || isNaN(quantity) || quantity < 0 || isNaN(price) || price < 0) {
-        alert('Veuillez remplir correctement tous les champs obligatoires (Nom, Quantité >= 0, Prix >= 0).');
-        return;
+      alert(
+        "Veuillez remplir correctement tous les champs obligatoires (Nom, Quantité >= 0, Prix >= 0)."
+      );
+      return;
     }
 
-    let newStockData;
-    if (id) { // Modification
-        newStockData = stock.map(item =>
-            item.id === id ? { ...item, name, quantity, price, image } : item
-        );
-    } else { // Ajout
-        const newItem = {
-            id: Date.now(),
-            name,
-            quantity,
-            price,
-            image
-        };
-        newStockData = [...stock, newItem];
+    if (id) {
+      // Modification
+      updateItem({ id, name, quantity, price, image });
+    } else {
+      // Ajout
+      const newItem = {
+        id: Date.now(), // ID unique simple
+        name,
+        quantity,
+        price,
+        image,
+      };
+      addItem(newItem);
     }
-    updateStock(newStockData);
+
     saveData();
     renderStockTable();
-    addEditModal.hide();
-    DOM.stockForm.reset();
-    DOM.imagePreview.style.display = 'none';
-    DOM.imagePreview.src = '#';
-};
+    hideAddEditModal();
+    stockForm.reset(); // Vider le formulaire après ajout/modif
+    imagePreview.style.display = "none";
+  });
+}

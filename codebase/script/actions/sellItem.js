@@ -1,38 +1,38 @@
-import { stock, updateStock, addSale, saveData, getItemToSellId, setItemToSellId } from '../../state.js';
-import { renderStockTable, renderSalesSummary } from '../ui/renderer.js';
-import { confirmSaleModal } from '../ui/modals.js';
+import { findItem, addSale, saveData } from "../state.js";
+import { renderStockTable, renderSalesSummary } from "../ui/renderer.js";
+import {
+  hideConfirmSaleModal,
+  resetItemToSellId,
+  getItemToSellId,
+} from "../ui/modals.js";
+import { confirmSaleButton } from "../domElements.js";
 
-export const confirmItemSale = () => {
-    const itemId = getItemToSellId();
-    if (itemId !== null) {
-        const itemIndex = stock.findIndex(item => item.id === itemId);
-        if (itemIndex !== -1 && stock[itemIndex].quantity > 0) {
-            // Crée une nouvelle copie du tableau stock pour la mise à jour
-            const updatedStockArray = stock.map((item, index) => {
-                if (index === itemIndex) {
-                    return { ...item, quantity: item.quantity - 1 };
-                }
-                return item;
-            });
-            updateStock(updatedStockArray); // Met à jour l'état avec le nouveau tableau
+export function setupSellItemListener() {
+  confirmSaleButton.addEventListener("click", () => {
+    const itemToSellId = getItemToSellId();
+    if (itemToSellId !== null) {
+      const item = findItem(itemToSellId);
+      if (item && item.quantity > 0) {
+        item.quantity -= 1;
 
-            const soldItem = stock[itemIndex]; // L'item original avant la décrémentation pour les détails de la vente
-            addSale({
-                itemId: soldItem.id,
-                name: soldItem.name,
-                price: soldItem.price, // Prix au moment de la vente
-                timestamp: new Date().toISOString()
-            });
+        // Enregistrer la vente
+        addSale({
+          itemId: item.id,
+          name: item.name,
+          price: item.price,
+          timestamp: new Date().toISOString(), // Garder une trace de quand la vente a eu lieu
+        });
 
-            saveData();
-            renderStockTable();
-            renderSalesSummary();
-            confirmSaleModal.hide();
-            setItemToSellId(null); // Réinitialiser l'ID
-        } else {
-            alert("Erreur : Article non trouvé ou déjà en rupture de stock.");
-            confirmSaleModal.hide();
-            setItemToSellId(null); // Réinitialiser l'ID
-        }
+        saveData();
+        renderStockTable();
+        renderSalesSummary();
+        hideConfirmSaleModal();
+        resetItemToSellId();
+      } else {
+        alert("Erreur : Article non trouvé ou déjà en rupture de stock.");
+        hideConfirmSaleModal();
+        resetItemToSellId();
+      }
     }
-};
+  });
+}
