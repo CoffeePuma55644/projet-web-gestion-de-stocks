@@ -21,7 +21,7 @@ GSK est une solution simple et efficace pour :
 
 Gérez facilement vos articles grâce à une interface claire : ajoutez, modifiez ou supprimez des produits, visualisez les quantités et prix, et effectuez des recherches instantanées.
 
-![Aperçu de la gestion des stocks](media/images/project_explain_1.webp)
+![Aperçu de la gestion des stocks](codebase/media/images/project_explain_1.webp)
 
 ---
 
@@ -29,7 +29,7 @@ Gérez facilement vos articles grâce à une interface claire : ajoutez, modif
 
 Consultez en temps réel le total des ventes de la journée, le détail de chaque transaction, et préparez l’exportation de vos données.
 
-![Aperçu de la comptabilité des ventes](media/images/project_explain_2.webp)
+![Aperçu de la comptabilité des ventes](codebase/media/images/project_explain_2.webp)
 
 ---
 

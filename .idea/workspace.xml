@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d3410b71-23db-4686-b305-0fdf6b8e4d7c" name="Changes" comment="Arrangement du projet&#10;&#10;Mise en place de la page d'acceuil vitrine du projet">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.html" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/app/app.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/app/app_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/content/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domElements.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/domElements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventListeners.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/eventListeners.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/app_icon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/media/images/app_icon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/project_explain_1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/media/images/project_explain_1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/project_explain_2.webp" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/media/images/project_explain_2.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_plan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/project_plan.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/actions/contact_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/actions/contact_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/actions/deleteItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/actions/deleteItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/actions/handleItemForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/actions/handleItemForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/actions/searchItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/actions/searchItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/actions/sellItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/actions/sellItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/ui/imagePreview.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/ui/imagePreview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/ui/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/ui/modals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/ui/renderer.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/ui/renderer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/utils/exportUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/script/utils/exportUtils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/state.js" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/codebase/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;CoffeePuma55644&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/CoffeePuma55644/projet-web-gestion-de-stocks.git&quot;,
+    &quot;accountId&quot;: &quot;cd43dba1-54da-4fbf-89aa-2e9d8373783b&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/app/app_script.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2yDii1FljSlXhcwhFicyMAyy8EK" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.contact.html.executor": "Run",
+    "JavaScript Debug.index.html.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Node.js.app_script.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coffe\OneDrive\Documents\GitHub\projet-web-gestion-de-stocks\codebase" />
+      <recent name="C:\Users\coffe\OneDrive\Documents\GitHub\projet-web-gestion-de-stocks" />
+      <recent name="C:\Users\coffe\OneDrive\Documents\GitHub\projet-web-gestion-de-stocks\elements" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-WS-251.26927.40" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3410b71-23db-4686-b305-0fdf6b8e4d7c" name="Changes" comment="" />
+      <created>1749375667473</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749375667473</updated>
+      <workItem from="1749375668605" duration="11208000" />
+      <workItem from="1749399487153" duration="105000" />
+      <workItem from="1749401548454" duration="2676000" />
+      <workItem from="1749409144573" duration="629000" />
+      <workItem from="1749455889900" duration="594000" />
+      <workItem from="1749457037592" duration="1717000" />
+      <workItem from="1749458867035" duration="244000" />
+      <workItem from="1749465539231" duration="56000" />
+      <workItem from="1749470105614" duration="622000" />
+      <workItem from="1749470740708" duration="381000" />
+      <workItem from="1749474767907" duration="1941000" />
+      <workItem from="1749486029726" duration="2938000" />
+      <workItem from="1749716871533" duration="2000" />
+      <workItem from="1749904326936" duration="1708000" />
+      <workItem from="1750234618228" duration="2435000" />
+      <workItem from="1750239468526" duration="1921000" />
+      <workItem from="1750836231707" duration="245000" />
+    </task>
+    <task id="LOCAL-00001" summary="Deep changes in the project.&#10;&#10;Preparation to a deeply changes in the project structures...">
+      <option name="closed" value="true" />
+      <created>1749457885611</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749457885611</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Arrangement du projet&#10;&#10;Déplacement du script.js de contact.html vers un dossier dédié pour une meilleure organistation et lisibilité.">
+      <option name="closed" value="true" />
+      <created>1749905948210</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1749905948210</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Arrangement du projet&#10;&#10;Mise en place de la page d'acceuil vitrine du projet">
+      <option name="closed" value="true" />
+      <created>1750241400445</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1750241400445</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update index.html for pdf export" />
+    <MESSAGE value="Deep changes in the project.&#10;&#10;Preparation to a deeply changes in the project structures..." />
+    <MESSAGE value="Arrangement du projet&#10;&#10;Déplacement du script.js de contact.html vers un dossier dédié pour une meilleure organistation et lisibilité." />
+    <MESSAGE value="Arrangement du projet&#10;&#10;Mise en place de la page d'acceuil vitrine du projet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arrangement du projet&#10;&#10;Mise en place de la page d'acceuil vitrine du projet" />
+  </component>
+</project>
