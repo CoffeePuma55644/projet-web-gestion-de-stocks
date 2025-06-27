@@ -2,19 +2,16 @@ import * as DOM from "./domElements.js";
 import { setItemToSellId, setItemToDeleteId } from "./state.js";
 
 import {
-  openAddModal,
-  openEditModal,
-  openSaleConfirmationModal,
-  openDeleteConfirmationModal,
+  prepareAddModal,
+  prepareEditModal,
+  prepareSaleModal,
+  prepareDeleteModal,
 } from "./script/ui/modals.js";
-import { updateImagePreview } from "./script/ui/imagePreview.js";
 
-import { processItemForm } from "./script/actions/handleItemForm.js";
-import { confirmItemDeletion } from "./script/actions/deleteItem.js";
-import { confirmItemSale } from "./script/actions/sellItem.js";
-import { filterStockOnChange } from "./script/actions/searchItem.js";
-
-import { exportToPDF, exportToExcel } from "./script/utils/exportUtils";
+import { setupFormEventListener } from "./script/actions/handleItemForm.js";
+import { setupDeleteItemListener } from "./script/actions/deleteItem.js";
+import { setupSellItemListener } from "./script/actions/sellItem.js";
+import { setupSearchListener } from "./script/actions/searchItem.js";
 
 function setupButtonEventListeners() {
   DOM.stockTableBody.addEventListener("click", (e) => {
@@ -30,18 +27,20 @@ function setupButtonEventListeners() {
       !buttonClasses.contains("disabled")
     ) {
       setItemToSellId(id);
-      openSaleConfirmationModal(id);
+      prepareSaleModal(id);
     } else if (buttonClasses.contains("edit-btn")) {
-      openEditModal(id);
+      prepareEditModal(id);
     } else if (buttonClasses.contains("delete-btn")) {
       setItemToDeleteId(id);
-      openDeleteConfirmationModal(id);
+      prepareDeleteModal(id);
     }
   });
 
-  document
-    .querySelector('button[data-bs-target="#addEditStockModal"]')
-    .addEventListener("click", openAddModal);
+  // Bouton "Ajouter Article"
+  const addItemBtn = document.getElementById("add-item-btn");
+  if (addItemBtn) {
+    addItemBtn.addEventListener("click", prepareAddModal);
+  }
 }
 
 function setupImagePreviewListener() {
@@ -60,30 +59,30 @@ function setupImagePreviewListener() {
   });
 }
 
+function setupExportListeners() {
+  const exportPdfBtn = document.getElementById("export-pdf-btn");
+  const exportExcelBtn = document.getElementById("export-excel-btn");
+
+  if (exportPdfBtn) {
+    exportPdfBtn.addEventListener("click", () => {
+      if (window.exportToPDF) window.exportToPDF();
+    });
+  }
+
+  if (exportExcelBtn) {
+    exportExcelBtn.addEventListener("click", () => {
+      if (window.exportToExcel) window.exportToExcel();
+    });
+  }
+}
+
 export function initializeEventListeners() {
-  // Formulaire d'ajout/modification
-  if (DOM.stockForm) DOM.stockForm.addEventListener("submit", processItemForm);
-
-  // Bouton d'ajout d'article (si vous avez un bouton dédié pour ouvrir la modale en mode "ajout")
-  if (DOM.addItemButton)
-    DOM.addItemButton.addEventListener("click", openAddModal);
-
-  // Boutons de confirmation dans les modales
-  if (DOM.confirmSaleButton)
-    DOM.confirmSaleButton.addEventListener("click", confirmItemSale);
-  if (DOM.confirmDeleteButton)
-    DOM.confirmDeleteButton.addEventListener("click", confirmItemDeletion);
-
-  // Champ de recherche
-  if (DOM.searchInput)
-    DOM.searchInput.addEventListener("input", filterStockOnChange);
-
+  // Configurer tous les écouteurs d'événements
+  setupFormEventListener();
+  setupDeleteItemListener();
+  setupSellItemListener();
+  setupSearchListener();
   setupButtonEventListeners();
   setupImagePreviewListener();
-
-  // Boutons d'exportation
-  if (DOM.exportPdfButton)
-    DOM.exportPdfButton.addEventListener("click", exportToPDF);
-  if (DOM.exportExcelButton)
-    DOM.exportExcelButton.addEventListener("click", exportToExcel);
+  setupExportListeners();
 }

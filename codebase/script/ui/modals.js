@@ -1,4 +1,4 @@
-import { findItem } from "../state.js";
+import { findItem } from "../../state.js";
 import {
   modalTitle,
   stockForm,
@@ -14,7 +14,7 @@ import {
   addEditModalEl,
   confirmSaleModalEl,
   confirmDeleteModalEl,
-} from "../domElements.js";
+} from "../../domElements.js";
 
 const addEditModal = new bootstrap.Modal(addEditModalEl);
 const confirmSaleModal = new bootstrap.Modal(confirmSaleModalEl);

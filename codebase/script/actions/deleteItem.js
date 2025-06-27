@@ -1,11 +1,11 @@
-import { deleteItem as deleteItemFromState, saveData } from "../state.js";
+import { deleteItem as deleteItemFromState, saveData } from "../../state.js";
 import { renderStockTable, renderSalesSummary } from "../ui/renderer.js";
 import {
   hideConfirmDeleteModal,
   resetItemToDeleteId,
   getItemToDeleteId,
 } from "../ui/modals.js";
-import { confirmDeleteButton } from "../domElements.js";
+import { confirmDeleteButton } from "../../domElements.js";
 
 export function setupDeleteItemListener() {
   confirmDeleteButton.addEventListener("click", () => {

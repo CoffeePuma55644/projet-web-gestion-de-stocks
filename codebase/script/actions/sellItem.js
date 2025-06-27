@@ -1,11 +1,11 @@
-import { findItem, addSale, saveData } from "../state.js";
+import { findItem, addSale, saveData } from "../../state.js";
 import { renderStockTable, renderSalesSummary } from "../ui/renderer.js";
 import {
   hideConfirmSaleModal,
   resetItemToSellId,
   getItemToSellId,
 } from "../ui/modals.js";
-import { confirmSaleButton } from "../domElements.js";
+import { confirmSaleButton } from "../../domElements.js";
 
 export function setupSellItemListener() {
   confirmSaleButton.addEventListener("click", () => {

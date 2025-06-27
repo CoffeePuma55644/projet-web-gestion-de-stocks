@@ -1,4 +1,4 @@
-import { getSalesToday, getStock } from "./state.js";
+import { getSalesToday, getStock } from "../../state.js";
 
 window.exportToPDF = async () => {
   const groupedSales = getGroupedSales();

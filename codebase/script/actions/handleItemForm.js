@@ -1,4 +1,4 @@
-import { addItem, updateItem, saveData } from "../state.js";
+import { addItem, updateItem, saveData } from "../../state.js";
 import { renderStockTable } from "../ui/renderer.js";
 import { hideAddEditModal } from "../ui/modals.js";
 import {
@@ -9,7 +9,7 @@ import {
   itemPriceInput,
   itemImageInput,
   imagePreview,
-} from "../domElements.js";
+} from "../../domElements.js";
 
 export function setupFormEventListener() {
   stockForm.addEventListener("submit", (e) => {

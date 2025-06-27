@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSK - Gestion de Stock</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="codebase/style.css" />
+    <link rel="icon" href="codebase/media/images/app_icon.ico" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-box-seam-fill me-2"></i>GSK
+        </a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="codebase/app/app.html">
+            <i class="bi bi-arrow-right-circle me-1"></i>Accéder à l'App
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container mt-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="display-4 fw-bold text-primary mb-4">
+            <i class="bi bi-boxes me-3"></i>GSK
+          </h1>
+          <h2 class="h3 text-secondary mb-4">
+            Gestion Simple et Efficace de vos Stocks
+          </h2>
+          <p class="lead mb-4">
+            Une application web moderne pour gérer votre inventaire, suivre vos
+            ventes et optimiser votre activité commerciale.
+          </p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a
+              href="codebase/app/app.html"
+              class="btn btn-primary btn-lg px-4 me-md-2"
+            >
+              <i class="bi bi-play-circle-fill me-2"></i>Commencer
+            </a>
+            <a
+              href="codebase/content/contact.html"
+              class="btn btn-outline-primary btn-lg px-4"
+            >
+              <i class="bi bi-envelope me-2"></i>Contact
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img
+            src="codebase/media/images/project_explain_1.webp"
+            alt="Interface de gestion des stocks"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+      </div>
+
+      <div class="row mt-5 pt-5">
+        <div class="col-lg-6 order-lg-2">
+          <h3 class="h4 mb-3">Fonctionnalités Principales</h3>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Gestion
+              complète des stocks
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Suivi des
+              ventes en temps réel
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Export
+              PDF et Excel
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Interface
+              moderne et responsive
+            </li>
+            <li class="mb-2">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>Recherche
+              rapide d'articles
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <img
+            src="codebase/media/images/project_explain_2.webp"
+            alt="Tableau de bord des ventes"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-light text-center text-muted py-4 mt-5">
+      <div class="container">
+        <p class="mb-1">
+          &copy; <span id="currentYear"></span> GSK - Par CoffeePuma
+        </p>
+        <p class="mb-0">
+          <a href="codebase/content/contact.html" class="text-decoration-none"
+            >Me contacter</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>

@@ -62,7 +62,7 @@
               class="btn btn-primary"
               data-bs-toggle="modal"
               data-bs-target="#addEditStockModal"
-              onclick="prepareAddModal()"
+              id="add-item-btn"
             >
               <i class="bi bi-plus-circle-fill me-1"></i> Ajouter Article
             </button>
@@ -121,13 +121,13 @@
             </ul>
             <button
               class="btn btn-secondary me-2"
-              onclick="exportToPDF()"
+              id="export-pdf-btn"
               disabled
             >
-              <i class="bi bi-file-earmark-pdf-fill me-1" id="export-pdf"></i>
+              <i class="bi bi-file-earmark-pdf-fill me-1"></i>
               Exporter en PDF
             </button>
-            <button class="btn btn-success" onclick="exportToExcel()" disabled>
+            <button class="btn btn-success" id="export-excel-btn" disabled>
               <i class="bi bi-file-earmark-spreadsheet-fill me-1"></i> Exporter
               en Excel
             </button>

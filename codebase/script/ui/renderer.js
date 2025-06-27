@@ -1,4 +1,4 @@
-import { getStock, getSalesToday, findItem } from "../state.js";
+import { getStock, getSalesToday, findItem } from "../../state.js";
 import {
   stockTableBody,
   noResultsMsg,
@@ -6,7 +6,7 @@ import {
   totalSalesEl,
   exportPdfButton,
   exportExcelButton,
-} from "../domElements.js";
+} from "../../domElements.js";
 
 // Afficher / Mettre à jour le tableau des stocks
 export const renderStockTable = (items = getStock()) => {

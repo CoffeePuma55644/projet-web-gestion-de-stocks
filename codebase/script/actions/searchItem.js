@@ -1,6 +1,6 @@
-import { getStock } from "../state.js";
+import { getStock } from "../../state.js";
 import { renderStockTable } from "../ui/renderer.js";
-import { searchInput } from "../domElements.js";
+import { searchInput } from "../../domElements.js";
 
 export function setupSearchListener() {
   searchInput.addEventListener("input", (e) => {

@@ -28,15 +28,11 @@ export const confirmDeleteButton = document.getElementById(
 // --- ÉLÉMENTS POUR LES FONCTIONS DE CALCUL ET D'EXPORT ---
 export const totalSalesEl = document.getElementById("totalSales");
 export const salesListUl = document.getElementById("salesList");
-export const exportPdfButton = document.querySelector(
-  'button[onclick="exportToPDF()"]'
-); // Sera utilisé pour attacher un listener
-export const exportExcelButton = document.querySelector(
-  'button[onclick="exportToExcel()"]'
-); // Sera utilisé pour attacher un listener
+export const exportPdfButton = document.getElementById("export-pdf-btn");
+export const exportExcelButton = document.getElementById("export-excel-btn");
 
-// Bouton pour ouvrir la modale d'ajout (supposons un ID)
-export const addItemButton = document.getElementById("addItemBtn"); // Assurez-vous que ce bouton existe avec cet ID
+// Bouton pour ouvrir la modale d'ajout
+export const addItemButton = document.getElementById("add-item-btn");
 
 // Initialiser l'année en cours
 document.getElementById("currentYear").textContent = new Date()
