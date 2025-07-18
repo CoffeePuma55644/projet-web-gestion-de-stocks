@@ -39,7 +39,7 @@ Consultez en temps réel le total des ventes de la journée, le détail de chaqu
 - **Recherche dynamique** par nom d’article
 - **Gestion des ventes** (confirmation, suivi, calcul automatique du total)
 - **Récapitulatif des ventes du jour**
-- **Exportation PDF/Excel** _(bientôt disponible)_
+- **Exportation PDF/Excel**
 - **Design responsive** (adapté mobile/tablette/desktop)
 - **Thème sombre professionnel**
 
