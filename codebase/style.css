@@ -24,11 +24,24 @@
   }
   
   /* Styles Globaux */
+  html, body {
+    height: 100%;
+    min-height: 100vh;
+  }
   body {
-      background-color: var(--bs-body-bg);
-      color: var(--bs-body-color);
-      transition: background-color 0.3s ease;
-      font-size: 0.95rem; /* Légère augmentation pour lisibilité */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    transition: background-color 0.3s ease;
+    font-size: 0.95rem; /* Légère augmentation pour lisibilité */
+  }
+  main {
+    flex: 1 0 auto;
+  }
+  footer {
+    flex-shrink: 0;
   }
   
   /* Titres */
