@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const deleteItemNameEl = document.getElementById("deleteItemName");
   const confirmDeleteButton = document.getElementById("confirmDeleteButton");
 
-  // --- FONCTIONS DE CALCUL ET D'EXPORT (non implémentée) ---
+  // --- FONCTIONS DE CALCUL ET D'EXPORT ---
   const totalSalesEl = document.getElementById("totalSales");
   const salesListUl = document.getElementById("salesList");
   const exportPdfButton = document.querySelector(
