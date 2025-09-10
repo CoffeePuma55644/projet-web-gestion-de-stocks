@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- VARIABLES ET ÉLÉMENTS DU DOM ---
+  // --- DOM VARIABLES AND ELEMENTS ---
   const stockTableBody = document.getElementById("stockTableBody");
   const searchInput = document.getElementById("searchInput");
   const stockForm = document.getElementById("stockForm");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const imagePreview = document.getElementById("imagePreview");
   const noResultsMsg = document.getElementById("noResults");
 
-  // --- VARIABLES POUR LES ACTIONS DE L'APP ---
+  // --- APP ACTION VARIABLES ---
   const confirmSaleModalEl = document.getElementById("confirmSaleModal");
   const confirmSaleModal = new bootstrap.Modal(confirmSaleModalEl);
   const saleItemNameEl = document.getElementById("saleItemName");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const deleteItemNameEl = document.getElementById("deleteItemName");
   const confirmDeleteButton = document.getElementById("confirmDeleteButton");
 
-  // --- FONCTIONS DE CALCUL ET D'EXPORT ---
+  // --- CALCULATION AND EXPORT FUNCTIONS ---
   const totalSalesEl = document.getElementById("totalSales");
   const salesListUl = document.getElementById("salesList");
   const exportPdfButton = document.querySelector(
@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-  // --- DONNÉES (Simulation - Utiliser localStorage pour la persistance) ---
+  // --- DATA (Simulation - Use localStorage for persistence) ---
   let stock = JSON.parse(localStorage.getItem("stockData")) || [
-    // Données d'exemple initiales si localStorage est vide
+    // Initial example data if localStorage is empty
     {
       id: Date.now() + 1,
       name: "PlayStation 5 Pro",
@@ -71,25 +71,25 @@ document.addEventListener("DOMContentLoaded", () => {
   let itemToSellId = null;
   let itemToDeleteId = null;
 
-  // --- FONCTIONS ---
+  // --- FUNCTIONS ---
 
-  // Sauvegarder les données dans localStorage
+  // Save data to localStorage
   const saveData = () => {
     localStorage.setItem("stockData", JSON.stringify(stock));
     localStorage.setItem("salesTodayData", JSON.stringify(salesToday));
   };
 
-  // Afficher / Mettre à jour le tableau des stocks
+  // Display / Update stock table
   const renderStockTable = (items = stock) => {
-    stockTableBody.innerHTML = ""; // Vider le tableau
+    stockTableBody.innerHTML = ""; // Clear table
     noResultsMsg.style.display = items.length === 0 ? "block" : "none";
 
     if (items.length === 0 && stock.length > 0) {
       noResultsMsg.textContent =
-        "Aucun article ne correspond à votre recherche.";
+        "No items match your search.";
     } else if (items.length === 0 && stock.length === 0) {
       noResultsMsg.textContent =
-        "Votre stock est vide. Ajoutez un article pour commencer.";
+        "Your stock is empty. Add an item to get started.";
     }
 
     items.forEach((item) => {
@@ -101,21 +101,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 }" alt="${item.name}" class="stock-item-img"></td>
                 <td>${item.name}</td>
                 <td>${item.quantity}</td>
-                <td>${item.price.toLocaleString("fr-CD")} $</td>
+                <td>${item.price.toLocaleString("en-US")} $</td>
                 <td>
                     <button class="btn btn-success btn-sm me-1 sell-btn ${
                       item.quantity <= 0 ? "disabled" : ""
-                    }" data-id="${item.id}" title="Vendre">
+                    }" data-id="${item.id}" title="Sell">
                         <i class="bi bi-cart-dash-fill"></i>
                     </button>
                     <button class="btn btn-warning btn-sm me-1 edit-btn" data-id="${
                       item.id
-                    }" title="Modifier">
+                    }" title="Edit">
                         <i class="bi bi-pencil-square"></i>
                     </button>
                     <button class="btn btn-danger btn-sm delete-btn" data-id="${
                       item.id
-                    }" title="Supprimer">
+                    }" title="Delete">
                         <i class="bi bi-trash3-fill"></i>
                     </button>
                 </td>
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  // Regroupe les ventes par article
+  // Group sales by item
   function getGroupedSales() {
     const grouped = {};
     salesToday.forEach((sale) => {
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return Object.values(grouped);
   }
 
-  // Modifie renderSalesSummary pour utiliser le regroupement
+  // Modify renderSalesSummary to use grouping
   const renderSalesSummary = () => {
     salesListUl.innerHTML = "";
     let total = 0;
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (groupedSales.length === 0) {
       salesListUl.innerHTML =
-        '<li class="list-group-item text-muted">Aucune vente enregistrée pour le moment.</li>';
+        '<li class="list-group-item text-muted">No sales recorded yet.</li>';
       exportPdfButton.disabled = true;
       exportExcelButton.disabled = true;
     } else {
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ${sale.name} (x${sale.quantitySold})
         </span>
         <span class="badge bg-success rounded-pill">${sale.price.toLocaleString(
-          "fr-CD"
+          "en-US"
         )} $</span>
       `;
         salesListUl.appendChild(listItem);
@@ -181,24 +181,24 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    totalSalesEl.textContent = `${total.toLocaleString("fr-CD")} $`;
+    totalSalesEl.textContent = `${total.toLocaleString("en-US")} $`;
     totalSalesEl.classList.add("updated");
     setTimeout(() => totalSalesEl.classList.remove("updated"), 500);
   };
 
-  // Préparer le modal pour l'ajout
+  // Prepare modal for adding
   window.prepareAddModal = () => {
-    modalTitle.textContent = "Ajouter un Article";
+    modalTitle.textContent = "Add an Item";
     stockForm.reset();
-    itemIdInput.value = ""; // Assurer qu'il n'y a pas d'ID
-    imagePreview.style.display = "none"; // Cacher l'aperçu
+    itemIdInput.value = ""; // Make sure there's no ID
+    imagePreview.style.display = "none"; // Hide preview
   };
 
-  // Préparer le modal pour la modification
+  // Prepare modal for editing
   const prepareEditModal = (id) => {
     const item = stock.find((item) => item.id === id);
     if (item) {
-      modalTitle.textContent = "Modifier l'Article";
+      modalTitle.textContent = "Edit Item";
       itemIdInput.value = item.id;
       itemNameInput.value = item.name;
       itemQuantityInput.value = item.quantity;
@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Préparer le modal de confirmation de vente
+  // Prepare sale confirmation modal
   const prepareSaleModal = (id) => {
     const item = stock.find((item) => item.id === id);
     if (item && item.quantity > 0) {
@@ -223,11 +223,11 @@ document.addEventListener("DOMContentLoaded", () => {
       stockAfterSaleEl.textContent = item.quantity - 1;
       confirmSaleModal.show();
     } else if (item) {
-      alert(`L'article "${item.name}" est en rupture de stock.`);
+      alert(`The item "${item.name}" is out of stock.`);
     }
   };
 
-  // Préparer le modal de confirmation de suppression
+  // Prepare deletion confirmation modal
   const prepareDeleteModal = (id) => {
     const item = stock.find((item) => item.id === id);
     if (item) {
@@ -237,9 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Gérer la soumission du formulaire (Ajout/Modification)
+  // Handle form submission (Add/Edit)
   stockForm.addEventListener("submit", (e) => {
-    e.preventDefault(); // Empêcher le rechargement de la page
+    e.preventDefault(); // Prevent page reload
 
     const id = parseInt(itemIdInput.value);
     const name = itemNameInput.value.trim();
@@ -249,20 +249,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!name || isNaN(quantity) || quantity < 0 || isNaN(price) || price < 0) {
       alert(
-        "Veuillez remplir correctement tous les champs obligatoires (Nom, Quantité >= 0, Prix >= 0)."
+        "Please fill in all required fields correctly (Name, Quantity >= 0, Price >= 0)."
       );
       return;
     }
 
     if (id) {
-      // Modification
+      // Edit
       stock = stock.map((item) =>
         item.id === id ? { ...item, name, quantity, price, image } : item
       );
     } else {
-      // Ajout
+      // Add
       const newItem = {
-        id: Date.now(), // ID unique simple
+        id: Date.now(), // Simple unique ID
         name,
         quantity,
         price,
@@ -274,24 +274,24 @@ document.addEventListener("DOMContentLoaded", () => {
     saveData();
     renderStockTable();
     addEditModal.hide();
-    stockForm.reset(); // Vider le formulaire après ajout/modif
+    stockForm.reset(); // Clear form after add/edit
     imagePreview.style.display = "none";
   });
 
-  // Gérer la confirmation de vente
+  // Handle sale confirmation
   confirmSaleButton.addEventListener("click", () => {
     if (itemToSellId !== null) {
       const itemIndex = stock.findIndex((item) => item.id === itemToSellId);
       if (itemIndex !== -1 && stock[itemIndex].quantity > 0) {
         stock[itemIndex].quantity -= 1;
 
-        // Enregistrer la vente
+        // Record the sale
         const soldItem = stock[itemIndex];
         salesToday.push({
           itemId: soldItem.id,
           name: soldItem.name,
           price: soldItem.price,
-          timestamp: new Date().toISOString(), // Garder une trace de quand la vente a eu lieu
+          timestamp: new Date().toISOString(), // Keep track of when the sale happened
         });
 
         saveData();
@@ -300,26 +300,26 @@ document.addEventListener("DOMContentLoaded", () => {
         confirmSaleModal.hide();
         itemToSellId = null;
       } else {
-        alert("Erreur : Article non trouvé ou déjà en rupture de stock.");
+        alert("Error: Item not found or already out of stock.");
         confirmSaleModal.hide();
         itemToSellId = null;
       }
     }
   });
 
-  // Gérer la confirmation de suppression
+  // Handle deletion confirmation
   confirmDeleteButton.addEventListener("click", () => {
     if (itemToDeleteId !== null) {
       stock = stock.filter((item) => item.id !== itemToDeleteId);
       saveData();
-      renderStockTable(); // Mettre à jour le tableau
-      renderSalesSummary(); // Recalculer au cas où (même si ça ne change rien ici)
+      renderStockTable(); // Update table
+      renderSalesSummary(); // Recalculate just in case (even if it doesn't change anything here)
       confirmDeleteModal.hide();
       itemToDeleteId = null;
     }
   });
 
-  // Gérer la recherche/filtrage
+  // Handle search/filtering
   searchInput.addEventListener("input", (e) => {
     const searchTerm = e.target.value.toLowerCase();
     const filteredStock = stock.filter((item) =>
@@ -328,11 +328,11 @@ document.addEventListener("DOMContentLoaded", () => {
     renderStockTable(filteredStock);
   });
 
-  // Gestion Clics sur les boutons du tableau (Vendre, Modifier, Supprimer) via délégation
+  // Handle clicks on table buttons (Sell, Edit, Delete) via delegation
   stockTableBody.addEventListener("click", (e) => {
-    const target = e.target.closest("button"); // Cible le bouton cliqué ou son parent si icône cliquée
+    const target = e.target.closest("button"); // Target the clicked button or its parent if icon clicked
 
-    if (!target) return; // Sortir si le clic n'était pas sur un bouton
+    if (!target) return; // Exit if click wasn't on a button
 
     const buttonClasses = target.classList;
     const id = parseInt(target.getAttribute("data-id"));
@@ -349,35 +349,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Aperçu de l'image lors de la saisie de l'URL
+  // Image preview when entering URL
   itemImageInput.addEventListener("input", () => {
     const url = itemImageInput.value.trim();
     if (url) {
       imagePreview.src = url;
       imagePreview.style.display = "block";
-      // Optionnel: vérifier si l'image se charge correctement
+      // Optional: check if image loads correctly
       imagePreview.onerror = () => {
-        // imagePreview.style.display = 'none'; // Cacher si erreur
+        // imagePreview.style.display = 'none'; // Hide if error
         imagePreview.src =
-          "https://via.placeholder.com/60/FF0000/FFFFFF?text=Erreur"; // Afficher image d'erreur
+          "https://via.placeholder.com/60/FF0000/FFFFFF?text=Error"; // Display error image
       };
     } else {
       imagePreview.style.display = "none";
     }
   });
 
-  // --- FONCTIONS D'EXPORTATION (Placeholders) ---
+  // --- EXPORT FUNCTIONS (Placeholders) ---
   window.exportToPDF = async () => {
-    // Exporter les ventes du jour en PDF
-    // Vérifier s'il y a des ventes à exporter
+    // Export daily sales to PDF
+    // Check if there are sales to export
     const groupedSales = getGroupedSales();
-    if (groupedSales.length === 0) return alert("Aucune vente à exporter.");
+    if (groupedSales.length === 0) return alert("No sales to export.");
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    doc.text("Récapitulatif des ventes du jour", 14, 14);
+    doc.text("Daily Sales Summary", 14, 14);
 
-    // Préparer les données pour autotable
+    // Prepare data for autotable
     const tableBody = await Promise.all(
       groupedSales.map(async (sale) => {
         // Convertir l'image en DataURL (si possible)
@@ -399,14 +399,14 @@ document.addEventListener("DOMContentLoaded", () => {
           { content: "", img: imgData }, // image
           sale.name,
           sale.quantitySold,
-          sale.price.toLocaleString("fr-CD") + " $",
-          (sale.price * sale.quantitySold).toLocaleString("fr-CD") + " $",
+          sale.price.toLocaleString("en-US") + " $",
+          (sale.price * sale.quantitySold).toLocaleString("en-US") + " $",
         ];
       })
     );
-    // Ajouter une ligne vide pour l'espacement
+    // Add empty line for spacing
     doc.autoTable({
-      head: [["Image", "Article", "Quantité", "Prix Unitaire", "Total"]],
+      head: [["Image", "Item", "Quantity", "Unit Price", "Total"]],
       body: tableBody,
       startY: 20,
       didDrawCell: function (data) {
@@ -423,30 +423,30 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    doc.save("ventes_du_jour.pdf");
+    doc.save("daily_sales.pdf");
   };
 
   window.exportToExcel = () => {
-    // Exporter les ventes du jour en Excel
+    // Export daily sales to Excel
     const groupedSales = getGroupedSales();
-    if (groupedSales.length === 0) return alert("Aucune vente à exporter.");
+    if (groupedSales.length === 0) return alert("No sales to export.");
     const ws_data = [
-      ["Image (URL)", "Article", "Quantité", "Prix Unitaire", "Total"],
+      ["Image (URL)", "Item", "Quantity", "Unit Price", "Total"],
       ...groupedSales.map((sale) => [
         sale.image,
         sale.name,
         sale.quantitySold,
-        sale.price.toLocaleString("fr-CD") + " $",
-        (sale.price * sale.quantitySold).toLocaleString("fr-CD") + " $",
+        sale.price.toLocaleString("en-US") + " $",
+        (sale.price * sale.quantitySold).toLocaleString("en-US") + " $",
       ]),
     ];
     const wb = XLSX.utils.book_new();
     const ws = XLSX.utils.aoa_to_sheet(ws_data);
-    XLSX.utils.book_append_sheet(wb, ws, "Ventes");
-    XLSX.writeFile(wb, "ventes_du_jour.xlsx");
+    XLSX.utils.book_append_sheet(wb, ws, "Sales");
+    XLSX.writeFile(wb, "daily_sales.xlsx");
   };
 
-  // --- INITIALISATION ---
+  // --- INITIALIZATION ---
   renderStockTable();
   renderSalesSummary();
 });
